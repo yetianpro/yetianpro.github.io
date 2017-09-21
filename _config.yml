@@ -1,0 +1,14 @@
+lsi: false
+#highlighter: rouge
+safe: true
+url: 'http://lucyxlu.com'
+markdown: kramdown
+redcarpet:
+  extensions:
+    - tables
+
+exclude:
+ - Gemfile
+ - Gemfile.lock
+ - README.md
+ - sass

@@ -1,46 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script type="text/javascript" async="" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" async="" src="js/tether.min.js"></script>
+---
+layout: default
+title: Ye Tian
+---
+{% for post in site.posts %}
+  <div class="row">
 
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <time class="two columns alpha" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+      {{ post.date | date_to_string }}
+    </time>
 
-    <script type="text/javascript" async="" src="js/bootstrap.min.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/ll.css" rel="stylesheet">
+    <article class="ten columns omega">
+      <h2 class="">
+        <a href="{{post.url}}" rel="canonical">{{ post.title }}</a>
+      </h2>
 
-</head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="text-center">
-            <h1 class="ll-title">Ye Tian</h1>
-            <p class="ll-intro">Data Science professional, CS@Gatech. Passionate about solving complicate problems and creating novel solutions.</p> 
-            <p class="ll-intro">My interested area including software engineering, machine learning and deep learning.</p>
-            <p class="ll-intro">(My page currently under developing...)</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="ll-social text-center">
-            <a class="ll-icon" href="https://github.com/yetianpro" data-toggle="tooltip" data-placement="bottom" title="github">
-                <i class="fa fa-github fa-lg" aria-hidden="true" ></i>
-            </a>
-            <a class="ll-icon" href="https://www.linkedin.com/in/yetianpro" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                <i class="fa fa-linkedin-square fa-lg" aria-hidden="true" ></i>
-            </a>
-            <a class="ll-icon" href="mailto:tianye.hnb@gmail.com" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                <i class="fa fa-envelope fa-lg" aria-hidden="true" ></i>
-            </a>
-        </div>
-    </div>
-    <div class="row">
+      {% if post.excerpt %}
+        {{ post.excerpt }}
+        <p>
+          <a href="{{post.url}}">
+            {% if post.break %} {{ post.break }} {% else %} Read more {% endif %}
+          </a>
+        </p>
+      {% endif %}
+    </article>
 
-    </div>
-
-</div>
-</body>
-</html>
-
-
-
+  </div>
+{% endfor %}
