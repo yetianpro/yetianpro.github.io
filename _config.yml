@@ -1,7 +1,7 @@
 lsi: false
 #highlighter: rouge
 safe: true
-url: 'http://lucyxlu.com'
+url: 'http://yetianpro.com'
 markdown: kramdown
 redcarpet:
   extensions:
